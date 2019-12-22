@@ -52,6 +52,10 @@ var orm = {
     },
     create: function (table, cols, vals, cb) {
         var queryString = "INSERT INTO " + table;
+        console.log("ORM cols");
+        console.log(cols);
+        console.log("vals:");
+        console.log(vals);
 
         queryString += " (";
         queryString += cols.toString();
@@ -63,9 +67,13 @@ var orm = {
         console.log(queryString);
 
         connection.query(queryString, vals, function (err, result) {
+            console.log("Result:");
+            console.log(result)
             if (err) {
                 throw err;
             }
+
+
 
             cb(result);
         });

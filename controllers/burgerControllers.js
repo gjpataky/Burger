@@ -19,6 +19,8 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/burger", function (req, res) {
+    console.log("post /api/burger");
+    console.log(req.body);
     burger.create([
         "name", "devour"
     ], [
