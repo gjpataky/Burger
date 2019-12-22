@@ -9,7 +9,7 @@ $(function () {
         };
 
         // Send the PUT request.
-        $.ajax("/api/devour/" + id, {
+        $.ajax("/api/burger/" + id, {
             type: "PUT",
             data: newDevoured
         }).then(
@@ -31,7 +31,7 @@ $(function () {
         };
 
         // Send the POST request.
-        $.ajax("/api/devour", {
+        $.ajax("/api/burger", {
             type: "POST",
             data: newBurger
         }).then(
@@ -43,11 +43,18 @@ $(function () {
         );
     });
 
-    $('.js-delete').on('click', function (event) {
-        const id = $(this).data('id');
+    $('.delete-burger').on('click', function (event) {
+        var id = $(this).data('id');
 
-        $.ajax('/api/burger/' + id, { type: 'DELETE' }).then(() => {
-            location.reload();
-        });
+        // Send the DELETE request.
+        $.ajax("/api/burger/" + id, {
+            type: "DELETE"
+        }).then(
+            function () {
+                console.log("deleted burger", id);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
     });
 });
