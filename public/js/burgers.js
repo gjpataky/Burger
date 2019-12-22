@@ -27,7 +27,7 @@ $(function () {
 
         var newBurger = {
             name: $("#ca").val().trim(),
-            devour: false
+            devour: $("[name=devour]:checked").val().trim()
         };
 
         // Send the POST request.
@@ -38,7 +38,7 @@ $(function () {
             function () {
                 console.log("created new burger");
                 // Reload the page to get the updated list
-                //location.reload();
+                location.reload();
             }
         );
     });

@@ -89,7 +89,7 @@ var orm = {
         });
     },
 
-    /*delete cats*/
+    /*delete burger*/
     delete: function (table, condition, cb) {
         const queryString = `DELETE FROM ${table} WHERE ${condition}`;
         connection.query(queryString, function (err, result) {
@@ -98,5 +98,5 @@ var orm = {
     },
 };
 
-// Export the orm object for the model (cat.js).
+// Export the orm object for the model (burger.js).
 module.exports = orm;
