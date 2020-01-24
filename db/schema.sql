@@ -5,8 +5,7 @@ USE burger_db;
 
 CREATE TABLE burger
 (
-    id int NOT NULL
-    AUTO_INCREMENT,
+    id int NOT NULL AUTO_INCREMENT,
 	name varchar
     (255) NOT NULL,
 	devour BOOLEAN DEFAULT false,
